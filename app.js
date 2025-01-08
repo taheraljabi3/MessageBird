@@ -16,7 +16,7 @@ app.use(cors({
 app.use(express.json());
 
 // عنوان Google Apps Script
-const scriptUrl = 'https://script.google.com/macros/s/AKfycbySJkYa3v9wrD8h0r27bGs5ZYvS2TWb_nukrjG9fUh8WdzVIeaVYnRs8DGkNxsKpKAieQ/exec';
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbw4r7p5xPXFiKVh4VTFdPdl4EQY67_fALWIespmyLf4YvLf2qjE89v1dvZmIepSXLV8Kg/exec';
 
 // نقطة استقبال البيانات
 app.post('/proxy', async (req, res) => {
