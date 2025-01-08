@@ -1,15 +1,15 @@
 const express = require('express');
 const cors = require('cors');
-const axios = require('axios'); // تأكد من تثبيت axios
+const axios = require('axios');
 
 const app = express();
-const port = process.env.PORT || 3000; // يمكن استخدام البيئة السحابية لتحديد البورت تلقائيًا
+const port = process.env.PORT || 3000; // المنفذ، يتم تحديده تلقائيًا في البيئة السحابية
 
 // تفعيل CORS لجميع النطاقات بما فيها OPTIONS
 app.use(cors({
-    origin: 'https://inbox.messagebird.com',  // تحديد النطاق الذي يسمح بالوصول
-    methods: ['GET', 'POST', 'OPTIONS'],  // السماح بالطرق المسموح بها بما في ذلك OPTIONS
-    allowedHeaders: ['Content-Type'],  // السماح بالهيدر Content-Type
+    origin: 'https://inbox.messagebird.com', // السماح بالنطاق الخاص بـ MessageBird
+    methods: ['GET', 'POST', 'OPTIONS'], // الطرق المسموح بها
+    allowedHeaders: ['Content-Type'], // الهيدر المسموح بها
 }));
 
 // تفسير محتوى JSON القادم من الطلبات
@@ -42,8 +42,8 @@ app.post('/proxy', async (req, res) => {
     }
 });
 
-// تأكد من أن الخادم يستجيب لطلبات OPTIONS أيضًا
-app.options('*', cors());  // تمكين CORS لكل المسارات
+// تأكد من أن الخادم يستجيب لطلبات OPTIONS
+app.options('*', cors());
 
 // تشغيل الخادم
 app.listen(port, () => {
