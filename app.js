@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000; // يمكن استخدام البيئة �
 
 // تفعيل CORS لجميع النطاقات بما فيها OPTIONS
 app.use(cors({
-    origin: 'https://admin.smarterp.top',  // تحديد النطاق الذي يسمح بالوصول
+    origin: 'https://inbox.messagebird.com',  // تحديد النطاق الذي يسمح بالوصول
     methods: ['GET', 'POST', 'OPTIONS'],  // السماح بالطرق المسموح بها بما في ذلك OPTIONS
     allowedHeaders: ['Content-Type'],  // السماح بالهيدر Content-Type
 }));
@@ -16,7 +16,7 @@ app.use(cors({
 app.use(express.json());
 
 // عنوان Google Apps Script
-const scriptUrl = 'https://script.google.com/macros/s/AKfycbwj3yGjnKhlxufV4IVQn1mTcUKrDcw0lcfNaPp9zaNVXTQBzG7qod_-kyvpudZGs7QQ/exec';
+const scriptUrl = 'https://script.google.com/macros/s/AKfycbySJkYa3v9wrD8h0r27bGs5ZYvS2TWb_nukrjG9fUh8WdzVIeaVYnRs8DGkNxsKpKAieQ/exec';
 
 // نقطة استقبال البيانات
 app.post('/proxy', async (req, res) => {
